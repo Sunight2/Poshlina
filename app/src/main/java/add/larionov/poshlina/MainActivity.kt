@@ -14,6 +14,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import add.larionov.poshlina.ui.theme.PoshlinaTheme
 import android.annotation.SuppressLint
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 
 class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -23,7 +26,13 @@ class MainActivity : ComponentActivity() {
         setContent {
             PoshlinaTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) {
-                    MainView()
+                    val navController = rememberNavController()
+
+                    NavHost(navController, startDestination = HomeScreen){
+                        composable<HomeScreen> {
+                            MainView()
+                        }
+                    }
                 }
             }
         }
