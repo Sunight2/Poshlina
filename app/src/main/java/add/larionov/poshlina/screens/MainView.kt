@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -19,7 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun MainView() {
+fun MainView(namePoshlina: NamePoshlina) {
     //верхня и нижняя панель в цвет темы
     val statusBarValues = WindowInsets.safeDrawing.asPaddingValues()
     val navigationBarsPadding = WindowInsets.safeDrawing.asPaddingValues()
@@ -29,7 +28,7 @@ fun MainView() {
             .fillMaxSize()
             .padding(top = statusBarValues.calculateTopPadding())
             .padding(bottom = navigationBarsPadding.calculateBottomPadding())
-            .padding(horizontal = 2.dp, vertical = 4.dp)
+            .padding(horizontal = 1.dp, vertical = 4.dp)
     ){
         Column {
             Row(
@@ -39,14 +38,17 @@ fun MainView() {
             ) {
                 Text(
                     text = "Выберите пошлину:",
-                    Modifier.padding(top = 10.dp)
+                    Modifier.padding(start = 2.dp, top = 10.dp)
                 )
                 Button(onClick = {}) {
                     Text(text = "Инфо")
                 }
             }
-            CardFirst()
+            CardFirst1(
+                namePoshlina = NamePoshlina(),
+                modifier = Modifier,
+                names = namePoshlina.poshlinaText
+            )
         }
-
     }
 }

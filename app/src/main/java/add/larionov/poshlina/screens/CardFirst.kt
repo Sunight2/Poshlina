@@ -1,13 +1,16 @@
 package add.larionov.poshlina.screens
 
+import add.larionov.poshlina.NamePoshlina
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Card
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -63,7 +66,7 @@ fun CardFirst() {
         "Подача заявления об обеспечении иска, в том числе иска, рассматриваемого в третейском суде," +
                 " о замене обеспечительной меры, об отмене обеспечения (за исключением заявлений о " +
                 "принятии предварительных обеспечительных мер защиты авторских и (или) смежных прав" +
-                " в информационно-телекоммуникационных сетях, в том числе в сети \"Интернет\")",
+                " в информационно-\nтелекоммуникационных сетях, в том числе в сети \"Интернет\")",
         "Подача заявления по делам о взыскании алиментов",
         "Подача административного искового заявления о присуждении компенсации за нарушение права " +
                 "на судопроизводство в разумный срок или права на исполнение судебного акта в разумный срок",
@@ -78,35 +81,114 @@ fun CardFirst() {
     //скролл пошлин текст
     val scrollState = rememberScrollState()
 
-    Column {
-        Column(
-            Modifier
-                .selectableGroup()
-                .verticalScroll(scrollState)
-        ) {
-            poshlinaText.forEach { text ->
+    Column(
+        Modifier
+            .selectableGroup()
+            .verticalScroll(scrollState)
+    ) {
+        poshlinaText.forEach { text ->
+            Card(
+                Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 6.dp)
+                    .selectable(
+                        selected = (text == selectedOption),
+                        onClick = { onOptionSelected(text) })
+            ) {
                 Row(
                     Modifier
                         .fillMaxWidth()
-                        .selectable(
-                            selected = (text == selectedOption),
-                            onClick = { onOptionSelected(text) }),
+                        .padding(vertical = 2.dp),
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     RadioButton(
                         selected = (text == selectedOption),
                         onClick = {
                             onOptionSelected(text)
-                            //???
+
                         }
                     )
                     Text(
                         text = text,
                         fontSize = 20.sp,
-                        modifier = Modifier.padding(bottom = 4.dp)
+                        modifier = Modifier.padding(2.dp)
                     )
                 }
             }
         }
     }
 }
+
+@Composable
+fun CardFirst1(
+    namePoshlina: NamePoshlina,
+    modifier: Modifier = Modifier,
+    names: Array<String>
+) {
+    //список пошлин текст и выбор
+    val poshlinaText = namePoshlina.poshlinaText
+    //val (selectedOption, onOptionSelected) = remember { mutableStateOf(poshlinaText[0]) }
+    //скролл пошлин текст
+    //val scrollState = rememberScrollState()
+    //размер списка
+    val itemCount = poshlinaText.size
+
+    LazyColumn {
+        //размер списка
+        val itemCount = poshlinaText.size
+        items(itemCount) {
+            ColumItem(
+                namePoshlina,
+                modifier,
+                itemIndex = it,
+                title = names
+            )
+        }
+    }
+}
+
+@Composable
+fun ColumItem (
+    namePoshlina: NamePoshlina,
+    modifier: Modifier,
+    title: Array<String>,
+    itemIndex: Int
+) {
+    val poshlinaText = namePoshlina.poshlinaText
+    //val (selectedOption, onOptionSelected) = remember { mutableStateOf(poshlinaText[0]) }
+    Column(
+        modifier
+            .selectableGroup()
+        //.verticalScroll(scrollState)
+    ) {
+        //poshlinaText.forEach { text ->
+            Card(
+                modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 6.dp)
+//                    .selectable(
+//                        selected = (text == selectedOption),
+//                        onClick = { onOptionSelected(text) })
+            ) {
+                Row(
+                    modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 2.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+//                    RadioButton(
+//                        selected = (text == selectedOption),
+//                        onClick = {
+//                            onOptionSelected(text)
+//
+//                        }
+//                    )
+                    Text(
+                        text = title[itemIndex],
+                        fontSize = 20.sp,
+                        modifier = Modifier.padding(2.dp)
+                    )
+                }
+            }
+        }
+    }
