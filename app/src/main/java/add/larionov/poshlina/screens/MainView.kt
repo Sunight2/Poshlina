@@ -16,9 +16,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 
 @Composable
-fun MainView(namePoshlina: NamePoshlina) {
+fun MainView(namePoshlina: NamePoshlina, navController: NavController) {
     //верхня и нижняя панель в цвет темы
     val statusBarValues = WindowInsets.safeDrawing.asPaddingValues()
     val navigationBarsPadding = WindowInsets.safeDrawing.asPaddingValues()
@@ -47,7 +48,8 @@ fun MainView(namePoshlina: NamePoshlina) {
             CardFirst1(
                 namePoshlina = NamePoshlina(),
                 modifier = Modifier,
-                names = namePoshlina.poshlinaText
+                names = namePoshlina.poshlinaText,
+                navController = navController
             )
         }
     }

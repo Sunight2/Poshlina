@@ -2,6 +2,7 @@ package add.larionov.poshlina
 
 import add.larionov.poshlina.screens.MainView
 import add.larionov.poshlina.screens2.Card1
+import add.larionov.poshlina.screens2.Card2
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -27,10 +28,13 @@ class MainActivity : ComponentActivity() {
 
                     NavHost(navController, startDestination = HomeScreen){
                         composable<HomeScreen> {
-                            MainView(namePoshlina = NamePoshlina())
+                            MainView(namePoshlina = NamePoshlina(), navController)
                         }
                         composable<Home1> {
                             Card1 ()
+                        }
+                        composable<Home1> {
+                            Card2 ()
                         }
                     }
                 }

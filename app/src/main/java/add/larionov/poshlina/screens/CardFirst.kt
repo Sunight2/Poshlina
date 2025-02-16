@@ -1,6 +1,10 @@
 package add.larionov.poshlina.screens
 
+import add.larionov.poshlina.HomeScreen
 import add.larionov.poshlina.NamePoshlina
+import add.larionov.poshlina.screens2.Card1
+import add.larionov.poshlina.screens2.DataScreen
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -20,6 +24,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 @Composable
 fun CardFirst() {
@@ -123,15 +128,11 @@ fun CardFirst() {
 fun CardFirst1(
     namePoshlina: NamePoshlina,
     modifier: Modifier = Modifier,
-    names: Array<String>
+    names: Array<String>,
+    navController: NavController
 ) {
     //список пошлин текст и выбор
     val poshlinaText = namePoshlina.poshlinaText
-    //val (selectedOption, onOptionSelected) = remember { mutableStateOf(poshlinaText[0]) }
-    //скролл пошлин текст
-    //val scrollState = rememberScrollState()
-    //размер списка
-    val itemCount = poshlinaText.size
 
     LazyColumn {
         //размер списка
@@ -141,54 +142,35 @@ fun CardFirst1(
                 namePoshlina,
                 modifier,
                 itemIndex = it,
-                title = names
+                title = names,
+                navController = navController
             )
         }
     }
 }
 
 @Composable
-fun ColumItem (
+fun ColumItem(
     namePoshlina: NamePoshlina,
     modifier: Modifier,
     title: Array<String>,
-    itemIndex: Int
+    itemIndex: Int,
+    navController: NavController
 ) {
-    val poshlinaText = namePoshlina.poshlinaText
-    //val (selectedOption, onOptionSelected) = remember { mutableStateOf(poshlinaText[0]) }
-    Column(
-        modifier
-            .selectableGroup()
-        //.verticalScroll(scrollState)
-    ) {
-        //poshlinaText.forEach { text ->
-            Card(
-                modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 6.dp)
-//                    .selectable(
-//                        selected = (text == selectedOption),
-//                        onClick = { onOptionSelected(text) })
-            ) {
-                Row(
-                    modifier
-                        .fillMaxWidth()
-                        .padding(vertical = 2.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-//                    RadioButton(
-//                        selected = (text == selectedOption),
-//                        onClick = {
-//                            onOptionSelected(text)
-//
-//                        }
-//                    )
-                    Text(
-                        text = title[itemIndex],
-                        fontSize = 20.sp,
-                        modifier = Modifier.padding(2.dp)
-                    )
+    Column {
+        Card(
+            modifier
+                .fillMaxWidth()
+                .padding(horizontal = 2.dp, vertical = 4.dp)
+                .clickable {
+                    navController.navigate(HomeScreen)
                 }
-            }
+        ) {
+            Text(
+                text = title[itemIndex],
+                fontSize = 20.sp,
+                modifier = Modifier.padding(horizontal = 4.dp, vertical = 4.dp)
+            )
         }
     }
+}
