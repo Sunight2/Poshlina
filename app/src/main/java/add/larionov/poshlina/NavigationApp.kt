@@ -1,11 +1,7 @@
-package add.larionov.poshlina.screens
+package add.larionov.poshlina
 
-import add.larionov.poshlina.HomeScreen
-import add.larionov.poshlina.NamePoshlina
-import add.larionov.poshlina.Screen1
-import add.larionov.poshlina.Screen2
-import add.larionov.poshlina.screens2.Card1
-import add.larionov.poshlina.screens2.Card2
+import add.larionov.poshlina.screens.MainView
+import add.larionov.poshlina.screens2.MainView2
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -17,7 +13,7 @@ fun NavigationApp() {
 
     NavHost(navController = navController, startDestination = HomeScreen) {
         composable<HomeScreen> { MainView(namePoshlina = NamePoshlina(), navController) }
-        composable<Screen1> { Card1() }
-        composable<Screen2> { Card2() }
+        composable<Screen1> { MainView2(namePoshlina = NamePoshlina(), navController) }
+        composable<Screen2> {  }
     }
 }

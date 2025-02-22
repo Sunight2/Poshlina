@@ -109,82 +109,107 @@ fun MainView(namePoshlina: NamePoshlina, navController: NavController) {
                     DataScreen1(
                         onClick = {},
                         modifier = Modifier,
-                        title = ""
+                        title = namePoshlina.poshlinaText10
                     )
                     DataScreen1(
                         onClick = {},
                         modifier = Modifier,
-                        title = ""
+                        title = namePoshlina.poshlinaText11
                     )
                     DataScreen1(
                         onClick = {},
                         modifier = Modifier,
-                        title = ""
+                        title = namePoshlina.poshlinaText12
                     )
                     DataScreen1(
                         onClick = {},
                         modifier = Modifier,
-                        title = ""
+                        title = namePoshlina.poshlinaText13
                     )
                     DataScreen1(
                         onClick = {},
                         modifier = Modifier,
-                        title = ""
+                        title = namePoshlina.poshlinaText14
                     )
                     DataScreen1(
                         onClick = {},
                         modifier = Modifier,
-                        title = ""
+                        title = namePoshlina.poshlinaText15
                     )
                     DataScreen1(
                         onClick = {},
                         modifier = Modifier,
-                        title = ""
+                        title = namePoshlina.poshlinaText16
                     )
                     DataScreen1(
                         onClick = {},
                         modifier = Modifier,
-                        title = ""
+                        title = namePoshlina.poshlinaText17
                     )
                     DataScreen1(
                         onClick = {},
                         modifier = Modifier,
-                        title = ""
+                        title = namePoshlina.poshlinaText18
                     )
                     DataScreen1(
                         onClick = {},
                         modifier = Modifier,
-                        title = ""
+                        title = namePoshlina.poshlinaText19
                     )
                     DataScreen1(
                         onClick = {},
                         modifier = Modifier,
-                        title = ""
+                        title = namePoshlina.poshlinaText20
                     )
                     DataScreen1(
                         onClick = {},
                         modifier = Modifier,
-                        title = ""
+                        title = namePoshlina.poshlinaText21
                     )
                     DataScreen1(
                         onClick = {},
                         modifier = Modifier,
-                        title = ""
+                        title = namePoshlina.poshlinaText22
                     )
                     DataScreen1(
                         onClick = {},
                         modifier = Modifier,
-                        title = ""
+                        title = namePoshlina.poshlinaText23
                     )
                     DataScreen1(
                         onClick = {},
                         modifier = Modifier,
-                        title = ""
+                        title = namePoshlina.poshlinaText24
                     )
                     DataScreen1(
                         onClick = {},
                         modifier = Modifier,
-                        title = ""
+                        title = namePoshlina.poshlinaText25
+                    )
+                    DataScreen1(
+                        onClick = {},
+                        modifier = Modifier,
+                        title = namePoshlina.poshlinaText26
+                    )
+                    DataScreen1(
+                        onClick = {},
+                        modifier = Modifier,
+                        title = namePoshlina.poshlinaText27
+                    )
+                    DataScreen1(
+                        onClick = {},
+                        modifier = Modifier,
+                        title = namePoshlina.poshlinaText28
+                    )
+                    DataScreen1(
+                        onClick = {},
+                        modifier = Modifier,
+                        title = namePoshlina.poshlinaText29
+                    )
+                    DataScreen1(
+                        onClick = {},
+                        modifier = Modifier,
+                        title = namePoshlina.poshlinaText30
                     )
                 }
             }
