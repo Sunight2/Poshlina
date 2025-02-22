@@ -1,7 +1,9 @@
 package add.larionov.poshlina.screens2
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
@@ -21,48 +23,30 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun Card1 () {
-    val poshlinaText1 = listOf("Имущественного характера, не подлежащего оценке, " +
-            "а также неимущественного характера",
-        "Имущественного характера, подлежащего оценке")
 
-    val (selectedOption, onOptionSelected) = remember { mutableStateOf(poshlinaText1[0]) }
-    //скролл пошлин текст
-    val scrollState = rememberScrollState()
-
-    Column(
-        Modifier
-            .selectableGroup()
-            .verticalScroll(scrollState)
-    ) {
-        poshlinaText1.forEach { text ->
             Card(
                 Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 6.dp)
-                    .selectable(
-                        selected = (text == selectedOption),
-                        onClick = { onOptionSelected(text) })
+                    .fillMaxSize()
+                    .padding(bottom = 6.dp),
+
+
             ) {
-                Row(
+                Box(
                     Modifier
                         .fillMaxWidth()
                         .padding(vertical = 2.dp),
-                    verticalAlignment = Alignment.CenterVertically,
+
                 ) {
-                    RadioButton(
-                        selected = (text == selectedOption),
-                        onClick = {
-                            onOptionSelected(text)
-                            //???
-                        }
-                    )
+
                     Text(
-                        text = text,
+                        text = "text",
                         fontSize = 20.sp,
-                        modifier = Modifier.padding(2.dp)
+                        modifier = Modifier
+                            .padding(2.dp)
+
+
                     )
                 }
             }
         }
-    }
-}
+

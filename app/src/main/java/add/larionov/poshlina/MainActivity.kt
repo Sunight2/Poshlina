@@ -1,6 +1,7 @@
 package add.larionov.poshlina
 
 import add.larionov.poshlina.screens.MainView
+import add.larionov.poshlina.screens.NavigationApp
 import add.larionov.poshlina.screens2.Card1
 import add.larionov.poshlina.screens2.Card2
 import android.os.Bundle
@@ -24,19 +25,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             PoshlinaTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) {
-                    val navController = rememberNavController()
-
-                    NavHost(navController, startDestination = HomeScreen){
-                        composable<HomeScreen> {
-                            MainView(namePoshlina = NamePoshlina(), navController)
-                        }
-                        composable<Home1> {
-                            Card1 ()
-                        }
-                        composable<Home1> {
-                            Card2 ()
-                        }
-                    }
+                    NavigationApp()
                 }
             }
         }

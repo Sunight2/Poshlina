@@ -5,4 +5,6 @@ import kotlinx.serialization.Serializable
 @Serializable
 object HomeScreen
 @Serializable
-object Home1
+object Screen1
+@Serializable
+object Screen2
