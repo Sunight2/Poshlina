@@ -27,7 +27,7 @@ fun DataScreen1(
             Text(
                 text = title,
                 fontSize = 20.sp,
-                modifier = Modifier.padding(horizontal = 4.dp, vertical = 4.dp)
+                modifier = Modifier.padding(horizontal = 8.dp, vertical = 6.dp)
             )
         }
     }

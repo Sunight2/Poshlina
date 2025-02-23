@@ -69,7 +69,15 @@ data class NamePoshlina (
     val poshlinaText30: String = "Подача кассационной жалобы",
 
     //список 1-1
+
     val poshlinaText1_1: String = "Имущественного характера, не подлежащего оценке, а также " +
             "неимущественного характера",
     val poshlinaText1_2: String = "Имущественного характера, подлежащего оценке",
+
+
+
+    //список юр физ лицо
+
+    val poshlinaTextFiz: String = "Физическое лицо",
+    val poshlinaTextUr: String = "Юридическое лицо",
 )

@@ -15,5 +15,10 @@ fun NavigationApp() {
         composable<HomeScreen> { MainView(namePoshlina = NamePoshlina(), navController) }
         composable<Screen1> { MainView2(namePoshlina = NamePoshlina(), navController) }
         composable<Screen2> {  }
+        composable<Screen2> {  }
+        composable<Screen2> {  }
+        composable<Screen2> {  }
+        composable<Screen2> {  }
+        composable<Screen2> {  }
     }
 }

@@ -1,6 +1,7 @@
 package add.larionov.poshlina.screens
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -17,18 +18,21 @@ fun DataScreen2 (
     modifier: Modifier,
     title: String,
 ) {
-    Column {
-        Card(
-            modifier
-                .fillMaxWidth()
-                .padding(horizontal = 2.dp, vertical = 4.dp)
-                .clickable {onClick()}
-        ) {
-            Text(
-                text = title,
-                fontSize = 20.sp,
-                modifier = Modifier.padding(horizontal = 4.dp, vertical = 4.dp)
-            )
+    Box (
+    ){
+        Column {
+            Card(
+                modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 2.dp, vertical = 4.dp)
+                    .clickable { onClick() }
+            ) {
+                Text(
+                    text = title,
+                    fontSize = 24.sp,
+                    modifier = Modifier.padding(horizontal = 8.dp, vertical = 6.dp)
+                )
+            }
         }
     }
 }
