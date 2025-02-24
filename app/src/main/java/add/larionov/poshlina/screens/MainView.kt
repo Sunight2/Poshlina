@@ -47,7 +47,7 @@ fun MainView(namePoshlina: NamePoshlina, navController: NavController) {
                     text = "Выберите пошлину:",
                     Modifier.padding(start = 2.dp, top = 10.dp)
                 )
-                Button(onClick = {navController.navigate(Screen1)}) {
+                Button(onClick = {navController.navigate(Screen2)}) {
                     Text(text = "Инфо")
                 }
             }

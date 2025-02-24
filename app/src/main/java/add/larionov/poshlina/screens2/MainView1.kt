@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
 @Composable
-fun MainView2(
+fun MainView1(
     namePoshlina: NamePoshlina, navController: NavController
 ) {
     //верхня и нижняя панель в цвет темы
@@ -59,7 +59,7 @@ fun MainView2(
             Spacer(Modifier.padding(4.dp))
             Text(
                 modifier = Modifier.fillMaxWidth(),
-                text = namePoshlina.poshlinaText2,
+                text = namePoshlina.poshlinaText1,
                 fontSize = 24.sp,
                 textAlign = TextAlign.Center,
             )
@@ -76,12 +76,12 @@ fun MainView2(
                                 poshlinaVisible3.value = false
                             },
                             modifier = Modifier,
-                            title = namePoshlina.poshlinaText2_1
+                            title = namePoshlina.poshlinaText1_1
                         )
                         DataScreen2(
                             onClick = { },
                             modifier = Modifier,
-                            title = namePoshlina.poshlinaText2_2
+                            title = namePoshlina.poshlinaText1_2
                         )
                     }
                     if (poshlinaVisible1.value) {
@@ -94,7 +94,7 @@ fun MainView2(
                                 poshlinaVisible3.value = false
                             },
                             modifier = Modifier,
-                            title = namePoshlina.poshlinaText2_1
+                            title = namePoshlina.poshlinaText1_1
                         )
                         DataScreen2(
                             onClick = {
@@ -127,14 +127,14 @@ fun MainView2(
                                 poshlinaVisible3.value = false
                             },
                             modifier = Modifier,
-                            title = namePoshlina.poshlinaText2_1
+                            title = namePoshlina.poshlinaText1_1
                         )
                         DataScreen2(
                             onClick = {},
                             modifier = Modifier.padding(start = 8.dp),
                             title = namePoshlina.poshlinaTextFiz
                         )
-                        TextTotalPoshlina(title = "1500 рублей")
+                        TextTotalPoshlina(title = "3000 рублей")
                     }
                     if (poshlinaVisible3.value) {
                         DataScreen2(
@@ -145,14 +145,14 @@ fun MainView2(
                                 poshlinaVisible3.value = false
                             },
                             modifier = Modifier,
-                            title = namePoshlina.poshlinaText2_1
+                            title = namePoshlina.poshlinaText1_1
                         )
                         DataScreen2(
                             onClick = {},
                             modifier = Modifier.padding(start = 8.dp),
                             title = namePoshlina.poshlinaTextUr
                         )
-                        TextTotalPoshlina(title = "10000 рублей")
+                        TextTotalPoshlina(title = "20000 рублей")
                     }
                 }
             }
