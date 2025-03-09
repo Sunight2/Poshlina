@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Composable
-fun CalculatorTheme (){
+fun CalculatorTheme() {
     val viewModel = viewModel<CalculatorViewModel>()
     val state = viewModel.state
     val buttonSpacing = 8.dp
@@ -22,7 +22,7 @@ fun CalculatorTheme (){
         buttonSpacing = buttonSpacing,
         modifier = Modifier
             .fillMaxSize()
-            .background(MediumGray)
+
             .padding(16.dp)
-        )
+    )
 }

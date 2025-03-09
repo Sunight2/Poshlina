@@ -1,5 +1,6 @@
 package add.larionov.poshlina
 
+import add.larionov.poshlina.raschetcalc.CalculatorTheme
 import add.larionov.poshlina.screens.MainView
 import add.larionov.poshlina.screens2.MainView1
 import add.larionov.poshlina.screens2.MainView2
@@ -21,5 +22,6 @@ fun NavigationApp() {
 //        composable<Screen2> {  }
 //        composable<Screen2> {  }
 //        composable<Screen2> {  }
+        composable<Calculator> { CalculatorTheme() }
     }
 }

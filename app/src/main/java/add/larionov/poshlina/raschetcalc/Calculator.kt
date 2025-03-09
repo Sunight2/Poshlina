@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -27,9 +28,7 @@ fun Calculator(
     modifier: Modifier = Modifier,
     onAction: (CalculatorActions) -> Unit
 ) {
-    Box (
-        modifier = Modifier
-    ){
+    Box (modifier = modifier){
         Column (
             modifier = Modifier
                 .fillMaxWidth()
@@ -82,7 +81,7 @@ fun Calculator(
                     }
                 )
                 CalculatorButton(
-                    symbol = "<-",
+                    symbol = "<",
                     modifier = Modifier
                         .background(MediumGray)
                         .aspectRatio(1f)
@@ -175,8 +174,8 @@ fun Calculator(
                     symbol = "=",
                     modifier = Modifier
                         .background(MediumGray)
-                        .aspectRatio(2f)
-                        .weight(2f),
+                        .aspectRatio(1f)
+                        .weight(1f),
                     onClick = {
                         onAction(CalculatorActions.Calculate)
                     }
@@ -200,8 +199,8 @@ fun Calculator(
                     symbol = ".",
                     modifier = Modifier
                         .background(MediumGray)
-                        .aspectRatio(2f)
-                        .weight(2f),
+                        .aspectRatio(1f)
+                        .weight(1f),
                     onClick = {
                         onAction(CalculatorActions.Decimal)
                     }
@@ -210,13 +209,14 @@ fun Calculator(
                     symbol = "=",
                     modifier = Modifier
                         .background(MediumGray)
-                        .aspectRatio(2f)
-                        .weight(2f),
+                        .aspectRatio(1f)
+                        .weight(1f),
                     onClick = {
                         onAction(CalculatorActions.Calculate)
                     }
                 )
             }
+            Spacer(Modifier.padding(bottom = 6.dp))
         }
     }
 }

@@ -1,5 +1,6 @@
 package add.larionov.poshlina.screens2
 
+import add.larionov.poshlina.Calculator
 import add.larionov.poshlina.HomeScreen
 import add.larionov.poshlina.NamePoshlina
 import add.larionov.poshlina.screens.DataScreen2
@@ -78,8 +79,9 @@ fun MainView1(
                             modifier = Modifier,
                             title = namePoshlina.poshlinaText1_1
                         )
+                        //переход на калькулятор
                         DataScreen2(
-                            onClick = { },
+                            onClick = {navController.navigate(Calculator)},
                             modifier = Modifier,
                             title = namePoshlina.poshlinaText1_2
                         )

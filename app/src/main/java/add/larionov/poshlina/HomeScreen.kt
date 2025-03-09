@@ -8,3 +8,5 @@ object HomeScreen
 object Screen1
 @Serializable
 object Screen2
+@Serializable
+object Calculator
