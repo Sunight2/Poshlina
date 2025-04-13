@@ -94,11 +94,6 @@ fun MainView(namePoshlina: NamePoshlina, navController: NavController) {
                     DataScreen1(
                         onClick = {},
                         modifier = Modifier,
-                        title = namePoshlina.poshlinaText7
-                    )
-                    DataScreen1(
-                        onClick = {},
-                        modifier = Modifier,
                         title = namePoshlina.poshlinaText8
                     )
                     DataScreen1(
