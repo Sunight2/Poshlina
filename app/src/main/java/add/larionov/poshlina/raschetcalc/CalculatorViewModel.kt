@@ -41,6 +41,14 @@ class CalculatorViewModel: ViewModel() {
     }
     private fun performCalculation() {
        val number1 = state.number1.toDouble()
+        val result1 = when(number1){
+            in 1.00..100000.00 -> 4000.0
+            in 100000.01..300000.00 -> 4000.0+((number1-100000)/100*3)
+            in 300000.01..500000.00 -> 10000.0+((number1-300000)/100*2.5)
+            in 500000.01..1000000.00 -> 15000+((number1-500000)/100*2)
+            else -> 5000
+        }
+
         val result = if(number1 <= 100000) 4000
         else if (number1 > 100000 && number1 <= 300000) {4000+((number1-100000)/100*3)}
         else if (number1 > 300000 && number1 <= 500000) {10000+((number1-300000)/100*2.5)}
@@ -56,7 +64,7 @@ class CalculatorViewModel: ViewModel() {
         else 000111.00
 
 state = state.copy(
-    number1 = result.toString()
+    number1 = result1.toString()
 )
         return
     }
