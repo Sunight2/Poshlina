@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.aspectRatio
@@ -50,6 +51,23 @@ fun Calculator(
                     Text(
                         text = "Госпошлина"
                     )
+                    Box(modifier = Modifier
+                        .fillMaxSize(),
+                        Alignment.Center
+                        ) {
+                        Row {
+                            Text(
+                                text = state.number,
+                                textAlign = TextAlign.Center,
+                                fontSize = 40.sp,
+                            )
+                            Text(
+                                text = " руб.",
+                                textAlign = TextAlign.Center,
+                                fontSize = 40.sp,
+                            )
+                        }
+                    }
                 }
             }
             Box(
@@ -67,10 +85,10 @@ fun Calculator(
                         textAlign = TextAlign.Center,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(vertical = 32.dp),
+                            .padding(bottom = 32.dp),
                         fontWeight = FontWeight.Light,
-                        fontSize = 80.sp,
-                        color = Color.White,
+                        fontSize = 50.sp,
+                        //color = Color.White,
                         maxLines = 1
                     )
                     Row(
