@@ -1,0 +1,83 @@
+package add.larionov.poshlina.screens2
+
+import add.larionov.poshlina.Calculator
+import add.larionov.poshlina.HomeScreen
+import add.larionov.poshlina.NamePoshlina
+import add.larionov.poshlina.screens.DataScreen2
+import add.larionov.poshlina.screens.TextTotalPoshlina
+import add.larionov.poshlina.screens.TopBarUser
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawing
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+
+@Composable
+fun MainView8(
+    namePoshlina: NamePoshlina, navController: NavController
+) {
+    //верхня и нижняя панель в цвет темы
+    val statusBarValues = WindowInsets.safeDrawing.asPaddingValues()
+    val navigationBarsPadding = WindowInsets.safeDrawing.asPaddingValues()
+    //видимость доп строк
+    val poshlinaVisible = remember { mutableStateOf(true) }
+    val poshlinaVisible1 = remember { mutableStateOf(false) }
+    val poshlinaVisible2 = remember { mutableStateOf(false) }
+    val poshlinaVisible3 = remember { mutableStateOf(false) }
+
+    Box(
+        Modifier
+            .fillMaxSize()
+            .padding(top = statusBarValues.calculateTopPadding())
+            .padding(bottom = navigationBarsPadding.calculateBottomPadding())
+            .padding(horizontal = 1.dp, vertical = 1.dp)
+    ) {
+        Column {
+            TopBarUser(
+                onClick1 = {
+                    navController.popBackStack(route = HomeScreen, inclusive = false)
+                },
+                onClick2 = {
+                    poshlinaVisible.value = true
+                    poshlinaVisible1.value = false
+                    poshlinaVisible2.value = false
+                    poshlinaVisible3.value = false
+                }
+            )
+            Spacer(Modifier.padding(4.dp))
+            Text(
+                modifier = Modifier.fillMaxWidth(),
+                text = namePoshlina.poshlinaText8,
+                fontSize = 24.sp,
+                textAlign = TextAlign.Center,
+            )
+            Spacer(Modifier.padding(4.dp))
+            Box {
+                Column {
+                    if (poshlinaVisible.value) {
+                        //начальный экран
+                        //переход на калькулятор
+                        DataScreen2(
+                            onClick = {navController.navigate(Calculator)},
+                            modifier = Modifier,
+                            title = namePoshlina.poshlinaText8
+                        )
+                    }
+                }
+            }
+        }
+    }
+}

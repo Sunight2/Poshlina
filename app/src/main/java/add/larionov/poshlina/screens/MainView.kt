@@ -2,7 +2,15 @@ package add.larionov.poshlina.screens
 
 import add.larionov.poshlina.NamePoshlina
 import add.larionov.poshlina.Screen1
+import add.larionov.poshlina.Screen10
 import add.larionov.poshlina.Screen2
+import add.larionov.poshlina.Screen3
+import add.larionov.poshlina.Screen4
+import add.larionov.poshlina.Screen5
+import add.larionov.poshlina.Screen6
+import add.larionov.poshlina.Screen7
+import add.larionov.poshlina.Screen8
+import add.larionov.poshlina.Screen9
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -67,42 +75,42 @@ fun MainView(namePoshlina: NamePoshlina, navController: NavController) {
                         title = namePoshlina.poshlinaText2
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Screen3)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText3
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Screen4)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText4
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Screen5)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText5
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Screen6)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText6
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Screen7)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText7
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Screen8)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText8
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Screen9)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText9
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Screen10)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText10
                     )
