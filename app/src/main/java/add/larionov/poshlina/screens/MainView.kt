@@ -1,10 +1,28 @@
 package add.larionov.poshlina.screens
 
+import add.larionov.poshlina.Calculator
 import add.larionov.poshlina.NamePoshlina
 import add.larionov.poshlina.Screen1
 import add.larionov.poshlina.Screen10
+import add.larionov.poshlina.Screen12
+import add.larionov.poshlina.Screen13
+import add.larionov.poshlina.Screen14
+import add.larionov.poshlina.Screen15
+import add.larionov.poshlina.Screen16
+import add.larionov.poshlina.Screen19
 import add.larionov.poshlina.Screen2
+import add.larionov.poshlina.Screen20
+import add.larionov.poshlina.Screen21
+import add.larionov.poshlina.Screen22
+import add.larionov.poshlina.Screen23
+import add.larionov.poshlina.Screen24
+import add.larionov.poshlina.Screen25
+import add.larionov.poshlina.Screen26
+import add.larionov.poshlina.Screen27
+import add.larionov.poshlina.Screen28
+import add.larionov.poshlina.Screen29
 import add.larionov.poshlina.Screen3
+import add.larionov.poshlina.Screen30
 import add.larionov.poshlina.Screen4
 import add.larionov.poshlina.Screen5
 import add.larionov.poshlina.Screen6
@@ -115,32 +133,32 @@ fun MainView(namePoshlina: NamePoshlina, navController: NavController) {
                         title = namePoshlina.poshlinaText10
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Calculator)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText11
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Screen12)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText12
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Screen13)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText13
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Screen14)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText14
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Screen15)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText15
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Screen16)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText16
                     )
@@ -150,67 +168,67 @@ fun MainView(namePoshlina: NamePoshlina, navController: NavController) {
                         title = namePoshlina.poshlinaText17
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Calculator)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText18
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Screen19)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText19
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Screen20)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText20
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Screen21)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText21
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Screen22)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText22
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Screen23)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText23
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Screen24)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText24
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Screen25)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText25
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Screen26)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText26
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Screen27)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText27
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Screen28)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText28
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Screen29)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText29
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Screen30)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText30
                     )
