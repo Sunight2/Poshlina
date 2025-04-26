@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun Calculator(
+fun Calculator2(
     state: CalculatorState,
     buttonSpacing: Dp,
     modifier: Modifier = Modifier,
@@ -220,7 +220,7 @@ fun Calculator(
                                 .aspectRatio(1f)
                                 .weight(1f),
                             onClick = {
-                                onAction(CalculatorActions.Calculate)
+                                onAction(CalculatorActions.Calculate2)
                             }
                         )
                     }

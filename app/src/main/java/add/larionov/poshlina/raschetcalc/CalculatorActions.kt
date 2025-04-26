@@ -6,5 +6,6 @@ sealed class CalculatorActions {
     object Delete: CalculatorActions()
     object Decimal: CalculatorActions()
     object Calculate: CalculatorActions()
+    object Calculate2: CalculatorActions()
 
 }

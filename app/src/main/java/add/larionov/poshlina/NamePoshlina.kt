@@ -100,8 +100,6 @@ data class NamePoshlina (
     val poshlinaText5_2: String = "Если ранее суд вынес решение о признании права собственности " +
             "истца (истцов) на указанное имущество",
 
-
-
     //список юр физ лицо
 
     val poshlinaTextFiz: String = "Физическое лицо",

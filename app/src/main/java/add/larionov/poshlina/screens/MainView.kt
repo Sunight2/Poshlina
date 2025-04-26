@@ -1,6 +1,7 @@
 package add.larionov.poshlina.screens
 
 import add.larionov.poshlina.Calculator
+import add.larionov.poshlina.Calculator2
 import add.larionov.poshlina.NamePoshlina
 import add.larionov.poshlina.Screen1
 import add.larionov.poshlina.Screen10
@@ -163,7 +164,7 @@ fun MainView(namePoshlina: NamePoshlina, navController: NavController) {
                         title = namePoshlina.poshlinaText16
                     )
                     DataScreen1(
-                        onClick = {},
+                        onClick = {navController.navigate(Calculator2)},
                         modifier = Modifier,
                         title = namePoshlina.poshlinaText17
                     )

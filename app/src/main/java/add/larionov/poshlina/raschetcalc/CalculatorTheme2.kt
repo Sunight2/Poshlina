@@ -8,12 +8,12 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Composable
-fun CalculatorTheme() {
+fun CalculatorTheme2() {
     val viewModel = viewModel<CalculatorViewModel>()
     val state = viewModel.state
     val buttonSpacing = 8.dp
 
-    Calculator(
+    Calculator2(
         state = state,
         onAction = viewModel::onAction,
         buttonSpacing = buttonSpacing,
