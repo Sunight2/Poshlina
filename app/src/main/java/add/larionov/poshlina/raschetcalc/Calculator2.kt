@@ -214,13 +214,13 @@ fun Calculator2(
                             }
                         )
                         CalculatorButton(
-                            symbol = "=",
+                            symbol = "!",
                             modifier = Modifier
                                 .background(MediumGray)
                                 .aspectRatio(1f)
                                 .weight(1f),
                             onClick = {
-                                onAction(CalculatorActions.Calculate2)
+
                             }
                         )
                     }
@@ -254,9 +254,7 @@ fun Calculator2(
                                 .background(MediumGray)
                                 .aspectRatio(1f)
                                 .weight(1f),
-                            onClick = {
-                                onAction(CalculatorActions.Calculate)
-                            }
+                            onClick = {onAction(CalculatorActions.Calculate2)}
                         )
                     }
                 }
