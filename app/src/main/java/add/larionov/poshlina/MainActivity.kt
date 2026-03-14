@@ -1,5 +1,6 @@
 package add.larionov.poshlina
 
+import add.larionov.poshlina.screens.NavigationTabExample
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -18,8 +19,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             PoshlinaTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) {
-                    NavigationApp()
+                    NavigationTabExample()
+                //                    NavigationApp()
                 }
+
             }
         }
     }

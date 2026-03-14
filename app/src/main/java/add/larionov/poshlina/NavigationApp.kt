@@ -40,6 +40,7 @@ fun NavigationApp() {
     val navController = rememberNavController()
 
     NavHost(navController = navController, startDestination = HomeScreen) {
+
         composable<HomeScreen> { MainView(namePoshlina = NamePoshlina(), navController) }
         composable<Screen1> { MainView1(namePoshlina = NamePoshlina(), navController) }
         composable<Screen2> { MainView2(namePoshlina = NamePoshlina(), navController) }

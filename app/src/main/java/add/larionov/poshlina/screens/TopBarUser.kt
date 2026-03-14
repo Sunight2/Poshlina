@@ -3,7 +3,6 @@ package add.larionov.poshlina.screens
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -30,10 +29,10 @@ fun TopBarUser (
             horizontalArrangement = Arrangement.SpaceBetween,
         ){
             IconButton(
-                onClick1
+                onClick = onClick1
             ) {
                 Icon(
-                    Icons.Filled.Home,
+                    imageVector = Icons.Filled.Home,
                     contentDescription = "Main Screen"
                 )
             }
@@ -43,7 +42,7 @@ fun TopBarUser (
                     fontSize = 26.sp,
                 )
             Button(
-                onClick2
+                onClick = onClick2
             ) {
                 Text(text = "Сбросить")
             }
