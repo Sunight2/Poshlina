@@ -1,11 +1,15 @@
 package add.larionov.poshlina.raschetcalc
 
+import add.larionov.poshlina.HomeScreen
+import add.larionov.poshlina.NamePoshlina
+import add.larionov.poshlina.screens.TopBarUser
 import add.larionov.poshlina.ui.theme.MediumGray
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.aspectRatio
@@ -22,6 +26,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 @Composable
 fun Calculator(
@@ -29,17 +34,23 @@ fun Calculator(
     buttonSpacing: Dp,
     modifier: Modifier = Modifier,
     onAction: (CalculatorActions) -> Unit,
+    navController: NavController,
 ) {
     val statusBarValues = WindowInsets.safeDrawing.asPaddingValues()
     val navigationBarsPadding = WindowInsets.safeDrawing.asPaddingValues()
     Box(
         modifier = modifier
             .fillMaxSize()
-            .padding(top = statusBarValues.calculateTopPadding())
+//            .padding(top = statusBarValues.calculateTopPadding())
             .padding(bottom = navigationBarsPadding.calculateBottomPadding())
     )
     {
         Column {
+            Spacer(Modifier.padding(top = 2.dp, bottom = 2.dp))
+            TopBarUser(
+                onClick1 = {navController.popBackStack(route = HomeScreen, inclusive = false)},
+                onClick2 = {onAction(CalculatorActions.Clear)}
+            )
             Box(
                 modifier = Modifier
                     .fillMaxWidth()

@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Autorenew
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
@@ -25,7 +26,9 @@ fun TopBarUser (
         modifier = Modifier.fillMaxWidth()
     ){
         Row (
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(start = 4.dp),
             horizontalArrangement = Arrangement.SpaceBetween,
         ){
             IconButton(
@@ -36,16 +39,19 @@ fun TopBarUser (
                     contentDescription = "Main Screen"
                 )
             }
-                Text(
-                    modifier = Modifier.padding(top = 8.dp),
-                    text = "Госпошлина",
-                    fontSize = 26.sp,
-                )
-            Button(
+            IconButton(
                 onClick = onClick2
             ) {
-                Text(text = "Сбросить")
+                Icon(
+                    imageVector = Icons.Filled.Autorenew,
+                    contentDescription = "Clear"
+                )
             }
+//            Button(
+//                onClick = onClick2
+//            ) {
+//                Text(text = "Сбросить")
+//            }
         }
     }
 }

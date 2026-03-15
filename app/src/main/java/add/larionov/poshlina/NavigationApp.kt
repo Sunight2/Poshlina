@@ -69,7 +69,7 @@ fun NavigationApp() {
         composable<Screen28> { MainView28(namePoshlina = NamePoshlina(), navController) }
         composable<Screen29> { MainView29(namePoshlina = NamePoshlina(), navController) }
         composable<Screen30> { MainView30(namePoshlina = NamePoshlina(), navController) }
-        composable<Calculator> { CalculatorTheme() }
+        composable<Calculator> { CalculatorTheme(navController) }
         composable<Calculator2> { CalculatorTheme2() }
     }
 }

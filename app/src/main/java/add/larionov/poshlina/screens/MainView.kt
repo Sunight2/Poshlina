@@ -51,7 +51,7 @@ import androidx.navigation.NavController
 @Composable
 fun MainView(namePoshlina: NamePoshlina, navController: NavController) {
     //верхня и нижняя панель в цвет темы
-    val statusBarValues = WindowInsets.safeDrawing.asPaddingValues()
+//    val statusBarValues = WindowInsets.safeDrawing.asPaddingValues()
     val navigationBarsPadding = WindowInsets.safeDrawing.asPaddingValues()
     //прокрутка
     val scrollState = rememberScrollState()
@@ -59,7 +59,7 @@ fun MainView(namePoshlina: NamePoshlina, navController: NavController) {
     Box(
         Modifier
             .fillMaxSize()
-            .padding(top = statusBarValues.calculateTopPadding())
+//            .padding(top = statusBarValues.calculateTopPadding())
             .padding(bottom = navigationBarsPadding.calculateBottomPadding())
             .padding(horizontal = 1.dp, vertical = 1.dp)
     ) {

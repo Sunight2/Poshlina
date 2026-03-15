@@ -1,14 +1,17 @@
 package add.larionov.poshlina.raschetcalc
 
+import add.larionov.poshlina.NamePoshlina
+import add.larionov.poshlina.NavigationApp
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 
 @Composable
-fun CalculatorTheme() {
+fun CalculatorTheme(navController: NavController) {
     val viewModel = viewModel<CalculatorViewModel>()
     val state = viewModel.state
     val buttonSpacing = 8.dp
@@ -19,6 +22,7 @@ fun CalculatorTheme() {
         buttonSpacing = buttonSpacing,
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp)
+            .padding(16.dp),
+        navController = navController
     )
 }

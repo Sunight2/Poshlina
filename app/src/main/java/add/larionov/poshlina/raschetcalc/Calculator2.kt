@@ -35,7 +35,7 @@ fun Calculator2(
     Box(
         modifier = modifier
             .fillMaxSize()
-            .padding(top = statusBarValues.calculateTopPadding())
+//            .padding(top = statusBarValues.calculateTopPadding())
             .padding(bottom = navigationBarsPadding.calculateBottomPadding())
     )
     {

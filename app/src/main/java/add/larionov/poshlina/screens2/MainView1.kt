@@ -41,11 +41,12 @@ fun MainView1(
     Box(
         Modifier
             .fillMaxSize()
-            .padding(top = statusBarValues.calculateTopPadding())
+//            .padding(top = statusBarValues.calculateTopPadding())
             .padding(bottom = navigationBarsPadding.calculateBottomPadding())
             .padding(horizontal = 1.dp, vertical = 1.dp)
     ) {
         Column {
+            Spacer(Modifier.padding(top = 2.dp, bottom = 2.dp))
             TopBarUser(
                 onClick1 = {
                     navController.popBackStack(route = HomeScreen, inclusive = false)

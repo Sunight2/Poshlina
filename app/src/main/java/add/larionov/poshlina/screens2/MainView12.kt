@@ -31,7 +31,7 @@ fun MainView12(
     Box(
         Modifier
             .fillMaxSize()
-            .padding(top = statusBarValues.calculateTopPadding())
+//            .padding(top = statusBarValues.calculateTopPadding())
             .padding(bottom = navigationBarsPadding.calculateBottomPadding())
             .padding(horizontal = 1.dp, vertical = 1.dp)
     ) {
