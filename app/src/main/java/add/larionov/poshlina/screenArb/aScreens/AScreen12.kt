@@ -1,7 +1,6 @@
-package add.larionov.poshlina.screens2
+package add.larionov.poshlina.screenArb.aScreens
 
-import add.larionov.poshlina.Calculator3
-import add.larionov.poshlina.HomeScreen
+import add.larionov.poshlina.HomeScreenArb
 import add.larionov.poshlina.NamePoshlina
 import add.larionov.poshlina.screens.DataScreen2
 import add.larionov.poshlina.screens.TextTotalPoshlina
@@ -26,8 +25,8 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
 @Composable
-fun MainView2(
-    namePoshlina: NamePoshlina, navController: NavController
+fun AScreen12(
+    namePoshlina: NamePoshlina, navController2: NavController
 ) {
     //верхня и нижняя панель в цвет темы
     //val statusBarValues = WindowInsets.safeDrawing.asPaddingValues()
@@ -46,9 +45,10 @@ fun MainView2(
             .padding(horizontal = 1.dp, vertical = 1.dp)
     ) {
         Column {
+            Spacer(Modifier.padding(top = 2.dp, bottom = 2.dp))
             TopBarUser(
                 onClick1 = {
-                    navController.popBackStack(route = HomeScreen, inclusive = false)
+                    navController2.popBackStack(route = HomeScreenArb, inclusive = false)
                 },
                 onClick2 = {
                     poshlinaVisible.value = true
@@ -60,7 +60,7 @@ fun MainView2(
             Spacer(Modifier.padding(4.dp))
             Text(
                 modifier = Modifier.fillMaxWidth(),
-                text = namePoshlina.poshlinaText2,
+                text = namePoshlina.aPoshlinaText12,
                 fontSize = 24.sp,
                 textAlign = TextAlign.Center,
             )
@@ -68,35 +68,7 @@ fun MainView2(
             Box {
                 Column {
                     if (poshlinaVisible.value) {
-                        //начальный экран
-                        DataScreen2(
-                            onClick = {
-                                poshlinaVisible.value = false
-                                poshlinaVisible1.value = true
-                                poshlinaVisible2.value = false
-                                poshlinaVisible3.value = false
-                            },
-                            modifier = Modifier,
-                            title = namePoshlina.poshlinaText2_1
-                        )
-                        DataScreen2(
-                            onClick = {navController.navigate(Calculator3)},
-                            modifier = Modifier,
-                            title = namePoshlina.poshlinaText2_2
-                        )
-                    }
-                    if (poshlinaVisible1.value) {
                         //выбрана 1
-                        DataScreen2(
-                            onClick = {
-                                poshlinaVisible.value = false
-                                poshlinaVisible1.value = true
-                                poshlinaVisible2.value = false
-                                poshlinaVisible3.value = false
-                            },
-                            modifier = Modifier,
-                            title = namePoshlina.poshlinaText2_1
-                        )
                         DataScreen2(
                             onClick = {
                                 poshlinaVisible.value = false
@@ -121,39 +93,19 @@ fun MainView2(
                     if (poshlinaVisible2.value) {
                         //выбрана 2
                         DataScreen2(
-                            onClick = {
-                                poshlinaVisible.value = false
-                                poshlinaVisible1.value = true
-                                poshlinaVisible2.value = false
-                                poshlinaVisible3.value = false
-                            },
-                            modifier = Modifier,
-                            title = namePoshlina.poshlinaText2_1
-                        )
-                        DataScreen2(
                             onClick = {},
                             modifier = Modifier.padding(start = 8.dp),
                             title = namePoshlina.poshlinaTextFiz
                         )
-                        TextTotalPoshlina(title = "1500 рублей")
+                        TextTotalPoshlina(title = "10000 рублей")
                     }
                     if (poshlinaVisible3.value) {
-                        DataScreen2(
-                            onClick = {
-                                poshlinaVisible.value = false
-                                poshlinaVisible1.value = true
-                                poshlinaVisible2.value = false
-                                poshlinaVisible3.value = false
-                            },
-                            modifier = Modifier,
-                            title = namePoshlina.poshlinaText2_1
-                        )
                         DataScreen2(
                             onClick = {},
                             modifier = Modifier.padding(start = 8.dp),
                             title = namePoshlina.poshlinaTextUr
                         )
-                        TextTotalPoshlina(title = "10 000 рублей")
+                        TextTotalPoshlina(title = "100000 рублей")
                     }
                 }
             }

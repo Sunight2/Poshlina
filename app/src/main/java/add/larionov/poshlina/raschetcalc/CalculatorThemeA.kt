@@ -9,18 +9,18 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 
 @Composable
-fun CalculatorTheme2(navController: NavController) {
+fun CalculatorThemeA(navController2: NavController) {
     val viewModel = viewModel<CalculatorViewModel>()
     val state = viewModel.state
     val buttonSpacing = 8.dp
 
-    Calculator2(
+    CalculatorA(
         state = state,
         onAction = viewModel::onAction,
         buttonSpacing = buttonSpacing,
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp),
-        navController = navController
+        navController2 = navController2
     )
 }

@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.aspectRatio
@@ -28,12 +27,12 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
 @Composable
-fun Calculator(
+fun Calculator3(
     state: CalculatorState,
     buttonSpacing: Dp,
     modifier: Modifier = Modifier,
     onAction: (CalculatorActions) -> Unit,
-    navController: NavController,
+    navController: NavController
 ) {
     val statusBarValues = WindowInsets.safeDrawing.asPaddingValues()
     val navigationBarsPadding = WindowInsets.safeDrawing.asPaddingValues()
@@ -45,7 +44,6 @@ fun Calculator(
     )
     {
         Column {
-            Spacer(Modifier.padding(top = 2.dp, bottom = 2.dp))
             TopBarUser(
                 onClick1 = {navController.popBackStack(route = HomeScreen, inclusive = false)},
                 onClick2 = {onAction(CalculatorActions.Clear)}
@@ -264,7 +262,7 @@ fun Calculator(
                                 .background(MediumGray)
                                 .aspectRatio(1f)
                                 .weight(1f),
-                            onClick = {onAction(CalculatorActions.Calculate)}
+                            onClick = {onAction(CalculatorActions.Calculate3)}
                         )
                     }
                 }

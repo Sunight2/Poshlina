@@ -7,5 +7,9 @@ sealed class CalculatorActions {
     object Decimal: CalculatorActions()
     object Calculate: CalculatorActions()
     object Calculate2: CalculatorActions()
+    object Calculate3: CalculatorActions()
+    object CalculateA: CalculatorActions()
+    object CalculateASPrikaz: CalculatorActions()
+    object CalculateAList: CalculatorActions()
 
 }

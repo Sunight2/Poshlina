@@ -1,6 +1,6 @@
 package add.larionov.poshlina.raschetcalc
 
-import add.larionov.poshlina.HomeScreen
+import add.larionov.poshlina.HomeScreenArb
 import add.larionov.poshlina.screens.TopBarUser
 import add.larionov.poshlina.ui.theme.MediumGray
 import androidx.compose.foundation.background
@@ -28,14 +28,14 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
 @Composable
-fun Calculator(
+fun CalculatorAList(
     state: CalculatorState,
     buttonSpacing: Dp,
     modifier: Modifier = Modifier,
     onAction: (CalculatorActions) -> Unit,
-    navController: NavController,
+    navController2: NavController,
 ) {
-    val statusBarValues = WindowInsets.safeDrawing.asPaddingValues()
+//    val statusBarValues = WindowInsets.safeDrawing.asPaddingValues()
     val navigationBarsPadding = WindowInsets.safeDrawing.asPaddingValues()
     Box(
         modifier = modifier
@@ -47,7 +47,7 @@ fun Calculator(
         Column {
             Spacer(Modifier.padding(top = 2.dp, bottom = 2.dp))
             TopBarUser(
-                onClick1 = {navController.popBackStack(route = HomeScreen, inclusive = false)},
+                onClick1 = {navController2.popBackStack(route = HomeScreenArb, inclusive = false)},
                 onClick2 = {onAction(CalculatorActions.Clear)}
             )
             Box(
@@ -264,7 +264,7 @@ fun Calculator(
                                 .background(MediumGray)
                                 .aspectRatio(1f)
                                 .weight(1f),
-                            onClick = {onAction(CalculatorActions.Calculate)}
+                            onClick = {onAction(CalculatorActions.CalculateAList)}
                         )
                     }
                 }

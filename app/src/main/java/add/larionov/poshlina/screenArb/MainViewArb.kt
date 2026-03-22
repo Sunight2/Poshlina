@@ -1,38 +1,24 @@
 package add.larionov.poshlina.screenArb
 
-import add.larionov.poshlina.screens.DataScreen1
-
-
-import add.larionov.poshlina.Calculator
-import add.larionov.poshlina.Calculator2
+import add.larionov.poshlina.AScreen10
+import add.larionov.poshlina.AScreen11
+import add.larionov.poshlina.AScreen12
+import add.larionov.poshlina.AScreen13
+import add.larionov.poshlina.AScreen14
+import add.larionov.poshlina.AScreen15
+import add.larionov.poshlina.AScreen16
+import add.larionov.poshlina.AScreen17
+import add.larionov.poshlina.AScreen18
+import add.larionov.poshlina.AScreen3
+import add.larionov.poshlina.AScreen4
+import add.larionov.poshlina.AScreen5
+import add.larionov.poshlina.AScreen8
+import add.larionov.poshlina.AScreen9
+import add.larionov.poshlina.CalculatorA
+import add.larionov.poshlina.CalculatorAList
+import add.larionov.poshlina.CalculatorASPrikaz
 import add.larionov.poshlina.NamePoshlina
-import add.larionov.poshlina.Screen1
-import add.larionov.poshlina.Screen10
-import add.larionov.poshlina.Screen12
-import add.larionov.poshlina.Screen13
-import add.larionov.poshlina.Screen14
-import add.larionov.poshlina.Screen15
-import add.larionov.poshlina.Screen16
-import add.larionov.poshlina.Screen19
-import add.larionov.poshlina.Screen2
-import add.larionov.poshlina.Screen20
-import add.larionov.poshlina.Screen21
-import add.larionov.poshlina.Screen22
-import add.larionov.poshlina.Screen23
-import add.larionov.poshlina.Screen24
-import add.larionov.poshlina.Screen25
-import add.larionov.poshlina.Screen26
-import add.larionov.poshlina.Screen27
-import add.larionov.poshlina.Screen28
-import add.larionov.poshlina.Screen29
-import add.larionov.poshlina.Screen3
-import add.larionov.poshlina.Screen30
-import add.larionov.poshlina.Screen4
-import add.larionov.poshlina.Screen5
-import add.larionov.poshlina.Screen6
-import add.larionov.poshlina.Screen7
-import add.larionov.poshlina.Screen8
-import add.larionov.poshlina.Screen9
+import add.larionov.poshlina.screens.DataScreen1
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -52,9 +38,9 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 
 @Composable
-fun MainViewArb(namePoshlina: NamePoshlina, navController: NavController) {
+fun MainViewArb(namePoshlina: NamePoshlina, navController2: NavController) {
     //верхня и нижняя панель в цвет темы
-    val statusBarValues = WindowInsets.safeDrawing.asPaddingValues()
+//    val statusBarValues = WindowInsets.safeDrawing.asPaddingValues()
     val navigationBarsPadding = WindowInsets.safeDrawing.asPaddingValues()
     //прокрутка
     val scrollState = rememberScrollState()
@@ -62,7 +48,7 @@ fun MainViewArb(namePoshlina: NamePoshlina, navController: NavController) {
     Box(
         Modifier
             .fillMaxSize()
-            .padding(top = statusBarValues.calculateTopPadding())
+//            .padding(top = statusBarValues.calculateTopPadding())
             .padding(bottom = navigationBarsPadding.calculateBottomPadding())
             .padding(horizontal = 1.dp, vertical = 1.dp)
     ) {
@@ -76,6 +62,9 @@ fun MainViewArb(namePoshlina: NamePoshlina, navController: NavController) {
                     text = "Выберите пошлину:",
                     Modifier.padding(start = 2.dp, top = 10.dp)
                 )
+//                Button(onClick = { navController.navigate(Screen2) }) {
+//                    Text(text = "Инфо")
+//                }
             }
             Box(
                 Modifier
@@ -83,9 +72,94 @@ fun MainViewArb(namePoshlina: NamePoshlina, navController: NavController) {
             ) {
                 Column {
                     DataScreen1(
-                        onClick = { navController.navigate(Screen1) },
+                        onClick = { navController2.navigate(CalculatorA) },
                         modifier = Modifier,
-                        title = namePoshlina.poshlinaText1
+                        title = namePoshlina.aPoshlinaText1
+                    )
+                    DataScreen1(
+                        onClick = { navController2.navigate(CalculatorASPrikaz) },
+                        modifier = Modifier,
+                        title = namePoshlina.aPoshlinaText2
+                    )
+                    DataScreen1(
+                        onClick = { navController2.navigate(AScreen3) },
+                        modifier = Modifier,
+                        title = namePoshlina.aPoshlinaText3
+                    )
+                    DataScreen1(
+                        onClick = { navController2.navigate(AScreen4) },
+                        modifier = Modifier,
+                        title = namePoshlina.aPoshlinaText4
+                    )
+                    DataScreen1(
+                        onClick = { navController2.navigate(AScreen5) },
+                        modifier = Modifier,
+                        title = namePoshlina.aPoshlinaText5
+                    )
+                    DataScreen1(
+                        onClick = { navController2.navigate(CalculatorAList) },
+                        modifier = Modifier,
+                        title = namePoshlina.aPoshlinaText6
+                    )
+                    DataScreen1(
+                        onClick = { navController2.navigate(CalculatorA) },
+                        modifier = Modifier,
+                        title = namePoshlina.aPoshlinaText7
+                    )
+                    DataScreen1(
+                        onClick = { navController2.navigate(AScreen8) },
+                        modifier = Modifier,
+                        title = namePoshlina.aPoshlinaText8
+                    )
+                    DataScreen1(
+                        onClick = { navController2.navigate(AScreen9) },
+                        modifier = Modifier,
+                        title = namePoshlina.aPoshlinaText9
+                    )
+                    DataScreen1(
+                        onClick = { navController2.navigate(AScreen10) },
+                        modifier = Modifier,
+                        title = namePoshlina.aPoshlinaText10
+                    )
+                    DataScreen1(
+                        onClick = { navController2.navigate(AScreen11) },
+                        modifier = Modifier,
+                        title = namePoshlina.aPoshlinaText11
+                    )
+                    DataScreen1(
+                        onClick = { navController2.navigate(AScreen12) },
+                        modifier = Modifier,
+                        title = namePoshlina.aPoshlinaText12
+                    )
+                    DataScreen1(
+                        onClick = { navController2.navigate(AScreen13) },
+                        modifier = Modifier,
+                        title = namePoshlina.aPoshlinaText13
+                    )
+                    DataScreen1(
+                        onClick = { navController2.navigate(AScreen14) },
+                        modifier = Modifier,
+                        title = namePoshlina.aPoshlinaText14
+                    )
+                    DataScreen1(
+                        onClick = { navController2.navigate(AScreen15) },
+                        modifier = Modifier,
+                        title = namePoshlina.aPoshlinaText15
+                    )
+                    DataScreen1(
+                        onClick = { navController2.navigate(AScreen16) },
+                        modifier = Modifier,
+                        title = namePoshlina.aPoshlinaText16
+                    )
+                    DataScreen1(
+                        onClick = { navController2.navigate(AScreen17) },
+                        modifier = Modifier,
+                        title = namePoshlina.aPoshlinaText17
+                    )
+                    DataScreen1(
+                        onClick = { navController2.navigate(AScreen18) },
+                        modifier = Modifier,
+                        title = namePoshlina.aPoshlinaText18
                     )
                 }
             }

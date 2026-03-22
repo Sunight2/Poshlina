@@ -62,3 +62,5 @@ object Screen30
 object Calculator
 @Serializable
 object Calculator2
+@Serializable
+object Calculator3

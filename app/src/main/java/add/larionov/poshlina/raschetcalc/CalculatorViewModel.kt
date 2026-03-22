@@ -16,6 +16,10 @@ class CalculatorViewModel : ViewModel() {
             is CalculatorActions.Clear -> state = CalculatorState()
             is CalculatorActions.Calculate -> performCalculation()
             is CalculatorActions.Calculate2 -> performCalculation2()
+            is CalculatorActions.Calculate3 -> performCalculation3()
+            is CalculatorActions.CalculateA -> performCalculationA()
+            is CalculatorActions.CalculateASPrikaz -> performCalculationASPrikaz()
+            is CalculatorActions.CalculateAList -> performCalculationAList()
             is CalculatorActions.Delete -> performDeletion()
         }
     }
@@ -30,7 +34,7 @@ class CalculatorViewModel : ViewModel() {
     }
 
     companion object {
-        private const val MAX_NUM_LENGHT = 9
+        private const val MAX_NUM_LENGHT = 11
     }
 
     private fun enterDecimal() {
@@ -43,7 +47,7 @@ class CalculatorViewModel : ViewModel() {
             return
         }
     }
-
+//обычный расчет
     private fun performCalculation() {
         val number1 = state.number1.toDouble()
         val result1 = when (number1) {
@@ -66,13 +70,13 @@ class CalculatorViewModel : ViewModel() {
         )
         return
     }
-
+//расчет выдачи исполнительных листов
     private fun performCalculation2() {
         val number1 = state.number1.toDouble()
         val result1 = when (number1) {
             in 0.0000000..0.0000000 -> 0.00
             in 0.0000001..100000.00 -> 4000.00 / 100 * 30
-            in 100000.01..300000.00 -> (4000.00 + ((number1 - 100000) / 100 * 3)) / 100 * 300
+            in 100000.01..300000.00 -> (4000.00 + ((number1 - 100000) / 100 * 3)) / 100 * 30
             in 300000.01..500000.00 -> (10000.00 + ((number1 - 300000) / 100 * 2.5)) / 100 * 30
             in 500000.01..1000000.00 -> (15000.00 + ((number1 - 500000) / 100 * 2)) / 100 * 30
             in 1000000.01..3000000.00 -> (25000.00 + ((number1 - 1000000) / 100 * 1)) / 100 * 30
@@ -81,6 +85,85 @@ class CalculatorViewModel : ViewModel() {
             in 24000000.01..50000000.00 -> (136000.00 + ((number1 - 24000000) / 100 * 0.3)) / 100 * 30
             in 50000000.01..100000000.00 -> (214000.00 + ((number1 - 50000000) / 100 * 0.2)) / 100 * 30
             in 100000000.01..10000000000.00 -> (314000.00 + ((number1 - 100000000) / 100 * 0.15)) / 100 * 30
+            else -> 0
+        }
+        state = state.copy(
+            number = "%.2f".format(result1)
+        )
+        return
+    }
+
+    //расчет судебный приказ
+    private fun performCalculation3() {
+        val number1 = state.number1.toDouble()
+        val result1 = when (number1) {
+            in 0.0000000..0.0000000 -> 0.00
+            in 0.0000001..100000.00 -> 4000.00 / 100 * 50
+            in 100000.01..300000.00 -> (4000.00 + ((number1 - 100000) / 100 * 3)) / 100 * 50
+            in 300000.01..500000.00 -> (10000.00 + ((number1 - 300000) / 100 * 2.5)) / 100 * 50
+            in 500000.01..1000000.00 -> (15000.00 + ((number1 - 500000) / 100 * 2)) / 100 * 50
+            in 1000000.01..3000000.00 -> (25000.00 + ((number1 - 1000000) / 100 * 1)) / 100 * 50
+            in 3000000.01..8000000.00 -> (45000.00 + ((number1 - 3000000) / 100 * 0.7)) / 100 * 50
+            in 8000000.01..24000000.00 -> (80000.00 + ((number1 - 8000000) / 100 * 0.35)) / 100 * 50
+            in 24000000.01..50000000.00 -> (136000.00 + ((number1 - 24000000) / 100 * 0.3)) / 100 * 50
+            in 50000000.01..100000000.00 -> (214000.00 + ((number1 - 50000000) / 100 * 0.2)) / 100 * 50
+            in 100000000.01..10000000000.00 -> (314000.00 + ((number1 - 100000000) / 100 * 0.15)) / 100 * 50
+            else -> 0
+        }
+        state = state.copy(
+            number = "%.2f".format(result1)
+        )
+        return
+    }
+// расчет Арбитраж
+    private fun performCalculationA() {
+        val number1 = state.number1.toDouble()
+        val result1 = when (number1) {
+            in 0.0000000..0.0000000 -> 0.00
+            in 0.0000001..100000.00 -> 10000.00
+            in 100000.01..1000000.00 -> (10000.00 + ((number1 - 100000) / 100 * 5))
+            in 1000000.01..10000000.00 -> (55000.00 + ((number1 - 1000000) / 100 * 3))
+            in 10000000.01..50000000.00 -> (325000.00 + ((number1 - 10000000) / 100 * 1))
+            in 50000000.01..1905000000.00 -> (725000.00 + ((number1 - 50000000) / 100 * 0.5))
+            in 1905000000.01..100000000000.00 -> 10000000.00
+            else -> 0
+        }
+        state = state.copy(
+            number = "%.2f".format(result1)
+        )
+        return
+    }
+
+    // расчет Арбитраж для судебного приказа
+    private fun performCalculationASPrikaz() {
+        val number1 = state.number1.toDouble()
+        val result1 = when (number1) {
+            in 0.0000000..0.0000000 -> 0.00
+            in 0.0000001..220000.00 -> 8000.00
+            in 220020.00..1000000.00 -> (10000.00 + ((number1 - 100000) / 100 * 5)) / 100 * 50
+            in 1000000.01..10000000.00 -> (55000.00 + ((number1 - 1000000) / 100 * 3)) / 100 * 50
+            in 10000000.01..50000000.00 -> (325000.00 + ((number1 - 10000000) / 100 * 1)) / 100 * 50
+            in 50000000.01..1905000000.00 -> (725000.00 + ((number1 - 50000000) / 100 * 0.5)) / 100 * 50
+            in 1905000000.01..100000000000.00 -> 10000000.00 / 100 * 50
+            else -> 0
+        }
+        state = state.copy(
+            number = "%.2f".format(result1)
+        )
+        return
+    }
+
+    // расчет Арбитраж для исп листа
+    private fun performCalculationAList() {
+        val number1 = state.number1.toDouble()
+        val result1 = when (number1) {
+            in 0.0000000..0.0000000 -> 0.00
+            in 0.0000001..100000.00 -> 10000.00 / 100 * 30
+            in 100000.01..1000000.00 -> (10000.00 + ((number1 - 100000) / 100 * 5)) / 100 * 30
+            in 1000000.01..10000000.00 -> (55000.00 + ((number1 - 1000000) / 100 * 3)) / 100 * 30
+            in 10000000.01..50000000.00 -> (325000.00 + ((number1 - 10000000) / 100 * 1)) / 100 * 30
+            in 50000000.01..1905000000.00 -> (725000.00 + ((number1 - 50000000) / 100 * 0.5)) / 100 * 30
+            in 1905000000.01..100000000000.00 -> 10000000.00 / 100 * 30
             else -> 0
         }
         state = state.copy(

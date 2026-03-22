@@ -1,7 +1,5 @@
 package add.larionov.poshlina.raschetcalc
 
-import add.larionov.poshlina.NamePoshlina
-import add.larionov.poshlina.NavigationApp
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
