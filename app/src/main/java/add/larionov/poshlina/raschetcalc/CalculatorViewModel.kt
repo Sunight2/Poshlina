@@ -95,8 +95,8 @@ class CalculatorViewModel : ViewModel() {
 
     //расчет судебный приказ
     private fun performCalculation3() {
-        val number1 = state.number1.toDouble()
-        val result1 = when (number1) {
+        val result1 = when (val number1 = state.number1.toDouble())
+        {
             in 0.0000000..0.0000000 -> 0.00
             in 0.0000001..100000.00 -> 4000.00 / 100 * 50
             in 100000.01..300000.00 -> (4000.00 + ((number1 - 100000) / 100 * 3)) / 100 * 50

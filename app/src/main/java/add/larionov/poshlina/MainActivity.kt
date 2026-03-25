@@ -20,9 +20,7 @@ class MainActivity : ComponentActivity() {
             PoshlinaTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) {
                     NavigationTabExample()
-                //                    NavigationApp()
                 }
-
             }
         }
     }

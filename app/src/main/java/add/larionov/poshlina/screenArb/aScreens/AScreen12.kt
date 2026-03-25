@@ -97,7 +97,7 @@ fun AScreen12(
                             modifier = Modifier.padding(start = 8.dp),
                             title = namePoshlina.poshlinaTextFiz
                         )
-                        TextTotalPoshlina(title = "10000 рублей")
+                        TextTotalPoshlina(title = "0 рублей")
                     }
                     if (poshlinaVisible3.value) {
                         DataScreen2(
@@ -105,7 +105,7 @@ fun AScreen12(
                             modifier = Modifier.padding(start = 8.dp),
                             title = namePoshlina.poshlinaTextUr
                         )
-                        TextTotalPoshlina(title = "100000 рублей")
+                        TextTotalPoshlina(title = "0 рублей")
                     }
                 }
             }

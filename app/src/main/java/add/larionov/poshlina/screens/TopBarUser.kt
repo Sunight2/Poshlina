@@ -8,14 +8,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Autorenew
 import androidx.compose.material.icons.filled.Home
-import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 
 @Composable
 fun TopBarUser (
@@ -27,8 +24,8 @@ fun TopBarUser (
     ){
         Row (
             modifier = Modifier
-                .fillMaxWidth()
-                .padding(start = 4.dp),
+                .fillMaxWidth(),
+                //.padding(start = 4.dp),
             horizontalArrangement = Arrangement.SpaceBetween,
         ){
             IconButton(
@@ -47,11 +44,6 @@ fun TopBarUser (
                     contentDescription = "Clear"
                 )
             }
-//            Button(
-//                onClick = onClick2
-//            ) {
-//                Text(text = "Сбросить")
-//            }
         }
     }
 }

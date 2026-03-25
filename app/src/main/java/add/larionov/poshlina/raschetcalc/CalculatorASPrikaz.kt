@@ -35,17 +35,14 @@ fun CalculatorASPrikaz(
     onAction: (CalculatorActions) -> Unit,
     navController2: NavController,
 ) {
-//    val statusBarValues = WindowInsets.safeDrawing.asPaddingValues()
     val navigationBarsPadding = WindowInsets.safeDrawing.asPaddingValues()
     Box(
         modifier = modifier
             .fillMaxSize()
-//            .padding(top = statusBarValues.calculateTopPadding())
             .padding(bottom = navigationBarsPadding.calculateBottomPadding())
     )
     {
         Column {
-            Spacer(Modifier.padding(top = 2.dp, bottom = 2.dp))
             TopBarUser(
                 onClick1 = {navController2.popBackStack(route = HomeScreenArb, inclusive = false)},
                 onClick2 = {onAction(CalculatorActions.Clear)}
@@ -57,7 +54,7 @@ fun CalculatorASPrikaz(
             ) {
                 Column {
                     Text(
-                        text = "Госпошлина"
+                        text = "Госпошлина:"
                     )
                     Box(
                         modifier = Modifier
@@ -94,7 +91,7 @@ fun CalculatorASPrikaz(
                         textAlign = TextAlign.Center,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(bottom = 32.dp),
+                            .padding(bottom = 10.dp),
                         fontWeight = FontWeight.Light,
                         fontSize = 50.sp,
                         maxLines = 1

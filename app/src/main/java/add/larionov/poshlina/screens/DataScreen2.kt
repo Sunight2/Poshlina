@@ -18,8 +18,7 @@ fun DataScreen2 (
     modifier: Modifier,
     title: String,
 ) {
-    Box (
-    ){
+    Box {
         Column {
             Card(
                 modifier

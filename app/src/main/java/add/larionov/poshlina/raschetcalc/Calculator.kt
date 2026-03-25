@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.aspectRatio
@@ -35,17 +34,14 @@ fun Calculator(
     onAction: (CalculatorActions) -> Unit,
     navController: NavController,
 ) {
-    val statusBarValues = WindowInsets.safeDrawing.asPaddingValues()
     val navigationBarsPadding = WindowInsets.safeDrawing.asPaddingValues()
     Box(
         modifier = modifier
             .fillMaxSize()
-//            .padding(top = statusBarValues.calculateTopPadding())
             .padding(bottom = navigationBarsPadding.calculateBottomPadding())
     )
     {
         Column {
-            Spacer(Modifier.padding(top = 2.dp, bottom = 2.dp))
             TopBarUser(
                 onClick1 = {navController.popBackStack(route = HomeScreen, inclusive = false)},
                 onClick2 = {onAction(CalculatorActions.Clear)}
@@ -57,7 +53,7 @@ fun Calculator(
             ) {
                 Column {
                     Text(
-                        text = "Госпошлина"
+                        text = "Госпошлина:"
                     )
                     Box(
                         modifier = Modifier
@@ -94,7 +90,7 @@ fun Calculator(
                         textAlign = TextAlign.Center,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(bottom = 32.dp),
+                            .padding(bottom = 10.dp),
                         fontWeight = FontWeight.Light,
                         fontSize = 50.sp,
                         maxLines = 1

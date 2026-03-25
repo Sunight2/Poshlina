@@ -34,12 +34,10 @@ fun Calculator3(
     onAction: (CalculatorActions) -> Unit,
     navController: NavController
 ) {
-    val statusBarValues = WindowInsets.safeDrawing.asPaddingValues()
     val navigationBarsPadding = WindowInsets.safeDrawing.asPaddingValues()
     Box(
         modifier = modifier
             .fillMaxSize()
-//            .padding(top = statusBarValues.calculateTopPadding())
             .padding(bottom = navigationBarsPadding.calculateBottomPadding())
     )
     {
@@ -55,7 +53,7 @@ fun Calculator3(
             ) {
                 Column {
                     Text(
-                        text = "Госпошлина"
+                        text = "Госпошлина:"
                     )
                     Box(
                         modifier = Modifier
@@ -92,7 +90,7 @@ fun Calculator3(
                         textAlign = TextAlign.Center,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(bottom = 32.dp),
+                            .padding(bottom = 10.dp),
                         fontWeight = FontWeight.Light,
                         fontSize = 50.sp,
                         maxLines = 1
