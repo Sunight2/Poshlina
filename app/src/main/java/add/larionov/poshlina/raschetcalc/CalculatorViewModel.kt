@@ -49,6 +49,10 @@ class CalculatorViewModel : ViewModel() {
     }
 //обычный расчет
     private fun performCalculation() {
+        if (state.number1.isBlank()) {
+            state = state.copy(number = "")
+            return
+        }
         val number1 = state.number1.toDouble()
         val result1 = when (number1) {
             in 0.0000000..0.0000000 -> 0.00
@@ -66,12 +70,16 @@ class CalculatorViewModel : ViewModel() {
         }
 
         state = state.copy(
-            number = "%.2f".format(result1)
+            number = "%.2f".format(result1) + " руб."
         )
         return
     }
 //расчет выдачи исполнительных листов
     private fun performCalculation2() {
+        if (state.number1.isBlank()) {
+            state = state.copy(number = "")
+            return
+        }
         val number1 = state.number1.toDouble()
         val result1 = when (number1) {
             in 0.0000000..0.0000000 -> 0.00
@@ -88,13 +96,17 @@ class CalculatorViewModel : ViewModel() {
             else -> 0
         }
         state = state.copy(
-            number = "%.2f".format(result1)
+            number = "%.2f".format(result1) + " руб."
         )
         return
     }
 
     //расчет судебный приказ
     private fun performCalculation3() {
+        if (state.number1.isBlank()) {
+            state = state.copy(number = "")
+            return
+        }
         val result1 = when (val number1 = state.number1.toDouble())
         {
             in 0.0000000..0.0000000 -> 0.00
@@ -111,12 +123,16 @@ class CalculatorViewModel : ViewModel() {
             else -> 0
         }
         state = state.copy(
-            number = "%.2f".format(result1)
+            number = "%.2f".format(result1) + " руб."
         )
         return
     }
 // расчет Арбитраж
     private fun performCalculationA() {
+        if (state.number1.isBlank()) {
+            state = state.copy(number = "")
+            return
+        }
         val number1 = state.number1.toDouble()
         val result1 = when (number1) {
             in 0.0000000..0.0000000 -> 0.00
@@ -129,13 +145,17 @@ class CalculatorViewModel : ViewModel() {
             else -> 0
         }
         state = state.copy(
-            number = "%.2f".format(result1)
+            number = "%.2f".format(result1) + " руб."
         )
         return
     }
 
     // расчет Арбитраж для судебного приказа
     private fun performCalculationASPrikaz() {
+        if (state.number1.isBlank()) {
+            state = state.copy(number = "")
+            return
+        }
         val number1 = state.number1.toDouble()
         val result1 = when (number1) {
             in 0.0000000..0.0000000 -> 0.00
@@ -148,13 +168,17 @@ class CalculatorViewModel : ViewModel() {
             else -> 0
         }
         state = state.copy(
-            number = "%.2f".format(result1)
+            number = "%.2f".format(result1) + " руб."
         )
         return
     }
 
     // расчет Арбитраж для исп листа
     private fun performCalculationAList() {
+        if (state.number1.isBlank()) {
+            state = state.copy(number = "")
+            return
+        }
         val number1 = state.number1.toDouble()
         val result1 = when (number1) {
             in 0.0000000..0.0000000 -> 0.00
@@ -167,7 +191,7 @@ class CalculatorViewModel : ViewModel() {
             else -> 0
         }
         state = state.copy(
-            number = "%.2f".format(result1)
+            number = "%.2f".format(result1) + " руб."
         )
         return
     }

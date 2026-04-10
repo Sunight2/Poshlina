@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
+import androidx.compose.material3.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -49,53 +50,66 @@ fun CalculatorASPrikaz(
             )
             Box(
                 modifier = Modifier
-                    .fillMaxWidth()
+                    .fillMaxSize()
                     .weight(1f)
             ) {
                 Column {
                     Text(
                         text = "Госпошлина:"
                     )
-                    Box(
-                        modifier = Modifier
-                            .fillMaxSize(),
-                        Alignment.Center
+                    Box(modifier = Modifier
+                        .fillMaxSize()
                     ) {
-                        Row {
-                            Text(
-                                text = state.number,
-                                textAlign = TextAlign.Center,
-                                fontSize = 40.sp,
-                            )
-                            Text(
-                                text = " руб.",
-                                textAlign = TextAlign.Center,
-                                fontSize = 40.sp,
-                            )
+                        Column {
+                            Box(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .weight(3f),
+                                Alignment.Center
+                            ) {
+                                Text(
+                                    text = state.number,
+                                    textAlign = TextAlign.Center,
+                                    fontSize = 45.sp,
+                                )
+                            }
+                            Card(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .weight(1f),
+                            ) {
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxSize(),
+                                    Alignment.Center
+                                ) {
+                                    Text(
+                                        text = state.number1,
+                                        textAlign = TextAlign.Center,
+                                        modifier = Modifier
+                                            .fillMaxWidth(),
+                                        fontWeight = FontWeight.Light,
+                                        fontSize = 40.sp,
+                                        maxLines = 1
+                                    )
+                                }
+                            }
                         }
                     }
                 }
             }
+            Spacer(Modifier.padding(vertical = 4.dp))
             Box(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .weight(2f)
+                    .fillMaxSize()
+                    .weight(1.4f)
             ) {
                 Column(
                     modifier = Modifier
                         .align(Alignment.BottomCenter),
                     verticalArrangement = Arrangement.spacedBy(buttonSpacing)
                 ) {
-                    Text(
-                        text = state.number1,
-                        textAlign = TextAlign.Center,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(bottom = 10.dp),
-                        fontWeight = FontWeight.Light,
-                        fontSize = 50.sp,
-                        maxLines = 1
-                    )
+
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.spacedBy(buttonSpacing)

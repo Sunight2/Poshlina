@@ -12,7 +12,7 @@ import androidx.navigation.NavController
 fun CalculatorTheme(navController: NavController) {
     val viewModel = viewModel<CalculatorViewModel>()
     val state = viewModel.state
-    val buttonSpacing = 8.dp
+    val buttonSpacing = 6.dp
 
     Calculator(
         state = state,
@@ -20,7 +20,7 @@ fun CalculatorTheme(navController: NavController) {
         buttonSpacing = buttonSpacing,
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp),
+            .padding(8.dp),
         navController = navController
     )
 }
